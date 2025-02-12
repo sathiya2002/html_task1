@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card-details {
+      background-color: #4f6df5;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .total-button {
+      background-color: #0095f6;
+      color: white;
+      font-weight: bold;
+    }
+    .product-card img {
+      width: 100px;
+      height: auto;
+    }
+    .shopping-cart {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container shopping-cart">
+    <div class="row">
+      <div class="col-md-8">
+        <h3 class="mb-4">Shopping cart</h3>
+        <p>You have 4 items in your cart</p>
+        <div class="list-group">
+          <div class="list-group-item d-flex align-items-center justify-content-between">
+            <div class="col-md-2">
+              <img src="https://media.istockphoto.com/id/1181690502/photo/apple-iphone-11-pro-on-a-wooden-surface-apples-new-smartphone-close-up-smartphone-and-airpods.jpg?s=612x612&w=is&k=20&c=_-ZLNyI9ZerAbjQxNOfz4I58T1VukyNCOExPjjpbJV4=" alt="iphone 11 pro" style="width:50px;border-radius:5px">
+            </div>
+              <div class="col-md-5">
+                <h6>Iphone 11 Pro</h6>
+                <p>256GB, Navy Blue</p>
+              </div>
+              <div class="col-md-2"><span>2</span></div>
+              <div class="col-md-2"><span>$900</span></div>
+              <div class="col-md-1"><button class="btn btn-sm">&#128465;</button></div>
+            </div>
+
+          <div class="list-group-item  d-flex align-items-center justify-content-between">
+            <div class="col-md-2">
+              <img src="https://images.samsung.com/is/image/samsung/assets/my/p6_gro2/p6_initial_mktpd/smartphones/galaxy-note10/specs/SMN975GalaxyNote10BackPenAuraBlackThumbnail.jpeg?$163_346_PNG$" alt="samsung galaxy note 10" style="width:50px;border-radius:5px">
+            </div>
+               <div class="col-md-5">
+                <h6>Samsung Galaxy Note 10</h6>
+                <p>256GB, Navy Blue</p>
+               </div>
+            <div class="col-md-2">
+            <span>2</span>
+          </div>
+          <div class="col-md-2">
+            <span>$900</span></div>
+            <div class="col-md-1"><button class="btn btn-sm">&#128465;</button></div>
+          </div>
+
+          <div class="list-group-item d-flex align-items-center justify-content-between">
+            <div class="col-md-2">
+              <img src="https://giggster.com/guide/content-img/articles/32091/1000-Canon-EOS-M50-Black-3_1519289084.jpg" alt="canon EOS M50" style="width:50px;border-radius:5px">
+              
+            </div>
+            <div class="col-md-5">
+              <h6>Canon EOS M50</h6>
+              <p>Onyx Black</p>
+            </div>
+            <div class="col-md-2"><span>1</span></div>
+            <div class="col-md-2"><span>$1199</span></div>
+            <div class="col-md-1"><button class="btn btn-sm">&#128465;</button></div>
+          </div>
+
+          <div class="list-group-item d-flex align-items-center justify-content-between">
+            <div class="col-md-2">
+              <img src="https://www.shutterstock.com/image-illustration/macbook-pro-2023-m2-chip-600nw-2328203513.jpg" alt="MackBook Pro" style="width:50px;border-radius:5px">
+            </div>
+            <div class="col-md-5">
+              <h6>MacBook Pro</h6>
+              <small>1TB, Graphite</small>
+            </div>
+            <div class="col-md-2"><span>1</span></div>
+            <div class=col-md-2><span>$1799</span></div>
+            <div class=col-md-1><button class="btn btn-sm">&#128465;</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-details">
+          <h5 class="text-white mb-3">Card Details</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label"></label>
+              <input type="text" class="form-control" placeholder="Cardholder's Name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label"></label>
+              <input type="text" class="form-control" placeholder="Card Number">
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" placeholder="Expiration">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" placeholder="CVV">
+              </div>
+            </div>
+            <div class="border-top pt-3">
+              <p>Subtotal: $4798.00</p>
+              <p>Shipping: $20.00</p>
+              <h5>Total(Incl. taxes): $4818.00</h5>
+            </div>
+            <button class="d-flex justify-content-between align-items-center w-100 p-2 btn btn-primary">
+              <span>$4818.00</span>
+              <span>CHECKOUT →</span>
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
