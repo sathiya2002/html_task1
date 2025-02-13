@@ -1,0 +1,202 @@
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout Form</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script>
+            function validateForm(event) {
+                event.preventDefault(); // Prevent default form submission
+    
+                let isValid = true;
+                
+                // First Name Validation
+                let firstName = document.getElementById("FirstName").value.trim();
+                if (firstName === "") {
+                    isValid = false;
+                    alert("First Name is required.");
+                }
+    
+                // Last Name Validation
+                let lastName = document.getElementById("LastName").value.trim();
+                if (lastName === "") {
+                    isValid = false;
+                    alert("Last Name is required.");
+                }
+    
+                // Username Validation
+                let userName = document.getElementById("UserName").value.trim();
+                if (userName === "") {
+                    isValid = false;
+                    alert("Username is required.");
+                }
+    
+                // Password Validation
+                let password = document.getElementById("Password").value;
+                if (password.length < 6) {
+                    isValid = false;
+                    alert("Password must be at least 6 characters long.");
+                }
+    
+                // Email Validation
+                let emailAddress = document.getElementById("EmailAddress").value.trim();
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailAddress)) {
+                    isValid = false;
+                    alert("Please enter a valid email address.");
+                }
+    
+                // Phone Number Validation (should be exactly 10 digits)
+                let phoneNumber = document.getElementById("PhoneNumber").value.trim();
+                if (!/^\d{10}$/.test(phoneNumber)) {
+                    isValid = false;
+                    alert("Phone number must be exactly 10 digits.");
+                }
+    
+                // Gender Validation
+                let gender = document.querySelector('input[name="gender"]:checked');
+                if (!gender) {
+                    isValid = false;
+                    alert("Please select a gender.");
+                }
+    
+                // City Validation
+                let city = document.getElementById("city").value.trim();
+                if (city === "") {
+                    isValid = false;
+                    alert("City is required.");
+                }
+    
+                // State Validation
+                let state = document.getElementById("state").value.trim();
+                if (state === "") {
+                    isValid = false;
+                    alert("State is required.");
+                }
+    
+                // Date of Birth Validation
+                let dob = document.getElementById("date").value.trim();
+                if (dob === "") {
+                    isValid = false;
+                    alert("Date of Birth is required.");
+                }
+    
+                // Address Validation
+                let address = document.getElementById("Address").value.trim();
+                if (address === "") {
+                    isValid = false;
+                    alert("Address is required.");
+                }
+    
+                // Terms & Conditions Validation
+                let checkbox = document.getElementById("checkbox").checked;
+                if (!checkbox) {
+                    isValid = false;
+                    alert("You must agree to the Terms and Conditions.");
+                }
+    
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                    document.getElementById("VForm").submit(); // Submit the form if valid
+                }
+            }
+        </script>
+    
+    </head>
+    <body>
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mb-3">
+                        <div class="mb-4"><h1>Form Validation</h1></div>
+                    </div>
+                </div>
+                <form id="VForm" onsubmit="validateForm(event)">
+                    <div class="row">
+                        <div class="col-md-6 bg-success rounded-2">
+                            <div class="col">
+                                <div>
+                                    <label class="form-label">FirstName:</label>
+                                    <input type="text"  class="form-control w-50" id="FirstName"  placeholder="firstname"name="FirstName" required><br>
+                                </div>
+                                <div>
+                                    <label class="form-label">LastName:</label>
+                                    <input type="text" class="form-control w-50" id="LastName" placeholder="lastname"name="LastName" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">UserName:</label>
+                                    <input type="text" class="form-control w-50" id="UserName" placeholder="Username" name="UserName" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Password:</label>
+                                    <input type="password"  class="form-control w-50" id="Password" placeholder="Password" name="Password" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">EmailAddress:</label>
+                                    <input type="Email" class="form-control w-50" id="EmailAddress" placeholder="Enter your Email here" name="EmailAddress" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">PhoneNumber:</label>
+                                    <input type="phone number" class="form-control w-50" id="PhoneNumber" placeholder="Enter your number here"name="PhoneNumber" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bg-success rounded-2">
+                            <div class="form-group">
+                                <label>Gender:</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="gender" required id="male" value="Male">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="gender" required id="female" value="feMale">
+                                    <label class="form-check-label" for="Female">Female</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="gender" required id="others" value="others">
+                                    <label class="form-check-label" for="others">Others</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City:</label>
+                                <select class="form-control w-50 mb-3" id="city" name="city" required>
+                                    <option value="">Select City</option>
+                                    <option value="Chennai">Chennai</option>
+                                    <option value="Madurai">Madurai</option>
+                                    <option value="trichy">Trichy</option>
+                                    <option value="coimbatore">coimbatore</option>
+                                </select>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="state">state:</label>
+                                <select class="form-control w-50 mb-3" id="state" name="state">
+                                    <option value="">Select state</option>
+                                    <option value="Chennai">Tamil Nadu</option>
+                                </select>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label ">DOB:</label>
+                                <input type="date" class="form-control w-50" id="date" placeholder="Select you DOB" name="date"required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Address:</label>
+                                <input type="text" class="form-control w-50 mb-3" id="Address" placeholder="Enter your Address" name="Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox"class="mb-4" id="checkbox" value="Agree Terms and Conditions">Agree Terms and Conditions
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-dark">Submit</button>
+                            </div>
+                        </div>             
+                </form>
+            </div>    
+    </body>
+</html>
